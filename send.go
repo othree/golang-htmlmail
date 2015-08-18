@@ -20,11 +20,15 @@ func main() {
   if !ok {
     panic("Gmail pass not set.")
   }
+  TO, ok := config.Get("to", "account")
+  if !ok {
+    panic("To account not set.")
+  }
 
 
 	msg := gomail.NewMessage()
 	msg.SetHeader("From", USER + "@gmail.com")
-	msg.SetHeader("To", USER + "@gmail.com")
+	msg.SetHeader("To", TO)
 
 	title, err := ioutil.ReadFile("title")
 	if err != nil {
