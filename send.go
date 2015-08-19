@@ -13,17 +13,17 @@ func main() {
 		panic("Config file not loaded.")
 	}
 	USER, ok := config.Get("gmail", "user")
-  if !ok {
-    panic("Gmail user not set.")
-  }
-  PASS, ok := config.Get("gmail", "pass")
-  if !ok {
-    panic("Gmail pass not set.")
-  }
-  TO, ok := config.Get("to", "account")
-  if !ok {
-    panic("To account not set.")
-  }
+	if !ok {
+		panic("Gmail user not set.")
+	}
+	PASS, ok := config.Get("gmail", "pass")
+	if !ok {
+		panic("Gmail pass not set.")
+	}
+	TO, ok := config.Get("to", "account")
+	if !ok {
+		panic("To account not set.")
+	}
 
 
 	msg := gomail.NewMessage()
